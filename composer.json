@@ -1,6 +1,6 @@
 {
   "name": "tleckie/log",
-  "license": "LGPL-3.0-only",
+  "license": "MIT",
   "description": "Simple PSR-3 log",
   "type": "library",
   "homepage": "https://github.com/teodoroleckie/log",
