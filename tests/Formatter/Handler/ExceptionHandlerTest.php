@@ -1,10 +1,11 @@
 <?php
 
-namespace Tleckie\Log\Tests\Handler;
+namespace Tleckie\Log\Tests\Formatter\Handler;
 
+use Exception;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Tleckie\Log\Formatter\Handler\ExceptionHandler;
-use Tleckie\Log\Level;
 
 /**
  * Class ExceptionHandlerTest
@@ -21,11 +22,10 @@ class ExceptionHandlerTest extends TestCase
     {
         $handler = new ExceptionHandler();
 
-        $message = new \Exception('Lorem Ipsum is simply dummy text', 55);
+        $message = new Exception('Lorem Ipsum is simply dummy text', 55);
 
         $value = str_replace('"Lorem Ipsum is simply dummy text" ', '', $handler->handler($message));
         $array = json_decode($value, true);
-
 
         foreach (['class', 'message', 'code', 'file', 'trace'] as $key) {
             static::assertTrue(isset($array[$key]));
@@ -46,6 +46,7 @@ class ExceptionHandlerTest extends TestCase
 
         static::assertEquals($expected, $handler->handler($message));
     }
+
     /**
      * @test
      */
@@ -53,11 +54,11 @@ class ExceptionHandlerTest extends TestCase
     {
         try {
             try {
-                throw new \Exception('Test message');
-            } catch (\Exception $exception) {
-                throw new \InvalidArgumentException('Ops!', 999, $exception);
+                throw new Exception('Test message');
+            } catch (Exception $exception) {
+                throw new InvalidArgumentException('Ops!', 999, $exception);
             }
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $handler = new ExceptionHandler();
             static::assertIsString($handler->handler($exception));
         }

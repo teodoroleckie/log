@@ -44,7 +44,9 @@ $log->emergency(new class(){});
 $log->emergency(new DummyToString());
 $log->emergency(new DummySerialized());
 ```
+
 #### Output:
+
 ```txt
 [2021-04-20T13:24:35+02:00] channel.ALERT "Test alert message" {"class":"Exception","message":"Test alert message","code":0,"file":"/log/index.php:34"} [1,2]
 [2021-04-20T13:24:35+02:00] channel.CRITICAL "Test critical message: (A value) => (B value)" {} {"A":"(A value)","B":"(B value)"}
@@ -59,6 +61,7 @@ $log->emergency(new DummySerialized());
 ```
 
 #### Default line format:
+
 ```txt
 [%date%] %channel%.%level% %message% %context%
 ```
@@ -80,6 +83,7 @@ $log = new Log($handlers, 'channelName', $lineFormat);
 ```
 
 #### Output:
+
 ```txt
 [2021-04-20T13:33:03+02:00] [channel] => (ALERT) "Test alert message" {"class":"Exception","message":"Test alert message","code":0,"file":"/log/index.php:34"} [1,2]
 [2021-04-20T13:33:03+02:00] [channel] => (CRITICAL) "Test critical message: (A value) => (B value)" {} {"A":"(A value)","B":"(B value)"}

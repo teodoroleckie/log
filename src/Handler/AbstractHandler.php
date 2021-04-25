@@ -13,9 +13,6 @@ use Tleckie\Log\Level;
  */
 abstract class AbstractHandler extends AbstractLogger
 {
-    /** @var string  */
-    protected string $minimumLevel;
-
     /** @var array */
     protected const LEVELS = [
         Level::EMERGENCY => 0,
@@ -27,6 +24,9 @@ abstract class AbstractHandler extends AbstractLogger
         Level::INFO => 6,
         Level::DEBUG => 7
     ];
+
+    /** @var string */
+    protected string $minimumLevel;
 
     /**
      * AbstractHandler constructor.

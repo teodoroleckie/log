@@ -1,6 +1,6 @@
 <?php
 
-namespace Tleckie\Log\Tests\Handler;
+namespace Tleckie\Log\Tests\Formatter\Handler;
 
 use PHPUnit\Framework\TestCase;
 use Tleckie\Log\Formatter\Handler\ArrayHandler;
@@ -21,7 +21,7 @@ class ArrayHandlerTest extends TestCase
         $handler = new ArrayHandler();
 
         $message = ['name' => 'Jhon'];
-        $expected = json_encode(json_encode($message), JSON_UNESCAPED_SLASHES). ' {}';
+        $expected = json_encode(json_encode($message), JSON_UNESCAPED_SLASHES) . ' {}';
         static::assertEquals($expected, $handler->handler($message));
     }
 

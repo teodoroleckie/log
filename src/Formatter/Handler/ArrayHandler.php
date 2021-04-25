@@ -18,7 +18,7 @@ class ArrayHandler extends Handler
     public function handler(mixed $message, array $context = []): string
     {
         if (is_array($message)) {
-            $message =  $this->encode($message);
+            $message = $this->encode($message);
         }
 
         return parent::handler($message, $context);

@@ -26,7 +26,7 @@ class StreamHandlerTest extends TestCase
         $this->stream = new StreamHandler(Level::INFO, $handle);
 
         $this->stream->log(Level::INFO, "info");
-        foreach (['alert','critical', 'error','warning','notice','debug'] as $method) {
+        foreach (['alert', 'critical', 'error', 'warning', 'notice', 'debug'] as $method) {
             call_user_func([$this->stream, $method], "$method");
         }
 

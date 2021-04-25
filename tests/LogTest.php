@@ -2,14 +2,12 @@
 
 namespace Tleckie\Log\Tests;
 
-use JsonException;
+use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use Tleckie\Log\Formatter\Handler\ExceptionHandler;
 use Tleckie\Log\Level;
 use Tleckie\Log\Log;
-use DateTimeImmutable;
-use Psr\Log\InvalidArgumentException;
 
 /**
  * Class LogTest
@@ -42,7 +40,7 @@ class LogTest extends TestCase
         $format = sprintf(
             '[%s] channel.INFO "message info" {} {"TYPE":"info"}',
             (new DateTimeImmutable('now'))->format('Y-m-d\TH:i:sP'),
-        )."\n";
+        ) . "\n";
 
         $this->handlerMock
             ->expects(static::once())
@@ -70,7 +68,8 @@ class LogTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Handlers have to be of type Psr\Log\LoggerInterface');
 
-        $handlers = [new class() {}];
+        $handlers = [new class() {
+        }];
         $this->logger = new Log($handlers);
     }
 
@@ -85,7 +84,7 @@ class LogTest extends TestCase
 
         $this->logger->log(Level::INFO, 'message {TYPE}', ['TYPE' => Level::INFO]);
 
-        foreach (['alert','critical', 'error','warning','notice','debug'] as $method) {
+        foreach (['alert', 'critical', 'error', 'warning', 'notice', 'debug'] as $method) {
             call_user_func([$this->logger, $method], "$method");
         }
     }

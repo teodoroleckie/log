@@ -1,13 +1,10 @@
 <?php
 
-namespace Tleckie\Log\Tests\Handler;
+namespace Tleckie\Log\Tests\Formatter\Handler;
 
+use JsonSerializable;
 use PHPUnit\Framework\TestCase;
 use Tleckie\Log\Formatter\Handler\ObjectHandler;
-use JsonSerializable;
-
-use Tleckie\Log\Handler\StreamHandler;
-use Tleckie\Log\Level;
 
 /**
  * Class ObjectHandlerTest
@@ -29,7 +26,7 @@ class ObjectHandlerTest extends TestCase
                 return ['name' => 'Jhon'];
             }
         };
-        $expected = json_encode('{"name":"Jhon"}') .' {}';
+        $expected = json_encode('{"name":"Jhon"}') . ' {}';
         static::assertEquals($expected, $handler->handler($message));
     }
 

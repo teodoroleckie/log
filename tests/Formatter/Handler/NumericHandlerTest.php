@@ -1,6 +1,6 @@
 <?php
 
-namespace Tleckie\Log\Tests\Handler;
+namespace Tleckie\Log\Tests\Formatter\Handler;
 
 use PHPUnit\Framework\TestCase;
 use Tleckie\Log\Formatter\Handler\NumericHandler;

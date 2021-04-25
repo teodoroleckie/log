@@ -1,11 +1,9 @@
 <?php
 
-namespace Tleckie\Log\Tests\Handler;
+namespace Tleckie\Log\Tests\Formatter\Handler;
 
 use PHPUnit\Framework\TestCase;
 use Tleckie\Log\Formatter\Handler\StringHandler;
-use Tleckie\Log\Handler\StreamHandler;
-use Tleckie\Log\Level;
 
 /**
  * Class StringHandlerTest

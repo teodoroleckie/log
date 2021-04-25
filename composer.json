@@ -21,7 +21,6 @@
     }
   },
   "provide": {
-
   },
   "require": {
     "php": "^8",
@@ -40,6 +39,15 @@
     "bin-dir": "bin"
   },
   "scripts": {
-    "php-cs-fixer": "php-cs-fixer --rules=@PSR1"
+    "fix-src": "./bin/php-cs-fixer fix src/ ",
+    "fix-tests": "./bin/php-cs-fixer fix tests/",
+    "tests": "./bin/phpunit ./tests/",
+    "infection": "infection",
+    "check": [
+      "@fix-src",
+      "@fix-tests",
+      "@tests",
+      "@infection"
+    ]
   }
 }
