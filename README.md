@@ -1,5 +1,10 @@
 ### Logger initialization:
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/tleckie/log.svg?style=flat-square)](https://packagist.org/packages/tleckie/log)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/teodoroleckie/log/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/teodoroleckie/log/?branch=main)
+[![Total Downloads](https://img.shields.io/packagist/dt/tleckie/log.svg?style=flat-square)](https://packagist.org/packages/tleckie/log)
+
+
 ```php
 
 require_once "vendor/autoload.php";
