@@ -2,7 +2,9 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tleckie/log.svg?style=flat-square)](https://packagist.org/packages/tleckie/log)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/teodoroleckie/log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/teodoroleckie/log/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/teodoroleckie/log/badges/build.png?b=master)](https://scrutinizer-ci.com/g/teodoroleckie/log/build-status/master)
 [![Total Downloads](https://img.shields.io/packagist/dt/tleckie/log.svg?style=flat-square)](https://packagist.org/packages/tleckie/log)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/teodoroleckie/log/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 
 You can install the package via composer:
