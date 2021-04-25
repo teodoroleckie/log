@@ -21,7 +21,7 @@ class FileHandler extends AbstractHandler
      * @param string $minimumLevel
      * @param string $file
      */
-    public function __construct(string $minimumLevel = Level::DEBUG, string $file)
+    public function __construct(string $minimumLevel = Level::DEBUG, string $file = '/tmp/error.log')
     {
         parent::__construct($minimumLevel);
 

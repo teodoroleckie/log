@@ -15,7 +15,6 @@ use Tleckie\Log\Level;
  */
 class FileHandlerTest extends TestCase
 {
-
     /**
      * @test
      */
