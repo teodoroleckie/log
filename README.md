@@ -4,6 +4,11 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/teodoroleckie/log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/teodoroleckie/log/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/tleckie/log.svg?style=flat-square)](https://packagist.org/packages/tleckie/log)
 
+You can install the package via composer:
+
+```bash
+composer require tleckie/log
+```
 
 ```php
 
