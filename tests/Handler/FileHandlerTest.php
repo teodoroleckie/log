@@ -15,8 +15,6 @@ use Tleckie\Log\Level;
  */
 class FileHandlerTest extends TestCase
 {
-    /** @var FileHandler */
-    private FileHandler $handler;
 
     /**
      * @test
@@ -26,14 +24,14 @@ class FileHandlerTest extends TestCase
         vfsStream::setup();
         vfsStream::create([ ['framework.log']]);
 
-        $this->handler = new FileHandler(Level::NOTICE, vfsStream::url('root').'/framework.log');
-        $this->handler->log(Level::INFO, "info");
+        $handler = new FileHandler(Level::NOTICE, vfsStream::url('root').'/framework.log');
+        $handler->log(Level::INFO, "info");
         foreach (['alert', 'critical', 'error', 'warning', 'notice', 'debug'] as $method) {
-            call_user_func([$this->handler, $method], $method);
+            call_user_func([$handler, $method], $method);
         }
 
         static::assertEquals('alertcriticalerrorwarningnotice', file_get_contents(vfsStream::url('root').'/framework.log'));
 
-        unset($this->handler);
+        unset($handler);
     }
 }
