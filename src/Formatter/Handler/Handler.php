@@ -2,8 +2,6 @@
 
 namespace Tleckie\Log\Formatter\Handler;
 
-use PHP_EOL;
-
 /**
  * Class Handler
  *
