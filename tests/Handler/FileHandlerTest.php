@@ -23,16 +23,16 @@ class FileHandlerTest extends TestCase
      */
     public function log(): void
     {
-        $root = vfsStream::setup('root');
-        $file = $root->url() . "/framework.log";
+        vfsStream::setup();
+        vfsStream::create([ ['framework.log']]);
 
-        $this->handler = new FileHandler(Level::NOTICE, $file);
+        $this->handler = new FileHandler(Level::NOTICE, vfsStream::url('root').'/framework.log');
         $this->handler->log(Level::INFO, "info");
         foreach (['alert', 'critical', 'error', 'warning', 'notice', 'debug'] as $method) {
             call_user_func([$this->handler, $method], $method);
         }
 
-        static::assertEquals('alertcriticalerrorwarningnotice', file_get_contents($file));
+        static::assertEquals('alertcriticalerrorwarningnotice', file_get_contents(vfsStream::url('root').'/framework.log'));
 
         unset($this->handler);
     }
